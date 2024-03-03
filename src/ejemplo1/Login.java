@@ -41,10 +41,10 @@ public class Login extends JFrame implements ActionListener {
         this.add(titleLabel);
 
         //Cargar la imagen
-        ImageIcon imagenIcon_xd = new ImageIcon(getClass().getResource("../imgs/logo.png"));
+        ImageIcon Icom = new ImageIcon(getClass().getResource("../imgs/logo.png"));
         
         // Ajusta el tamaño de la imagen, es decir, redimencionar
-        Image imageDemension = imagenIcon_xd.getImage().getScaledInstance(150, 100, Image.SCALE_SMOOTH);
+        Image imageDemension = Icom.getImage().getScaledInstance(150, 100, Image.SCALE_SMOOTH);
         // Crear un nuevo ImageIcon con la imagen ajustada
         ImageIcon adjustedImageIcon = new ImageIcon(imageDemension);
 
@@ -137,7 +137,8 @@ public class Login extends JFrame implements ActionListener {
             }
             
         } else if (Ae.getActionCommand().equals("Registrarse")) {
-            RegisterPacient vtn_registropa = new RegisterPacient();
+            //RegisterLogin vtn_registropa = new RegisterLogin();
+            Patient_Module vtn_andmin = new Patient_Module();
             this.dispose();
             
             

@@ -6,9 +6,9 @@ package ejemplo1;
  */
 import java.util.ArrayList;
 
-public class DatosDoctores {
+public class DoctorsData {
 
-    public static ArrayList<Doctores> DoctorList = new ArrayList<>();
+    public static ArrayList<Doctors> DoctorList = new ArrayList<>();
     public static int  contador=1;
     public static void main(String[] args) {
 
@@ -22,7 +22,7 @@ public class DatosDoctores {
         Object[][] arreglo = new Object[filas][8];
         
         for (int i = 0; i < filas; i++) {
-                Doctores temp_doctores= DoctorList.get(i);
+                Doctors temp_doctores= DoctorList.get(i);
                 
                 arreglo[i][0]=temp_doctores.getCodigo();
                 arreglo[i][1]=temp_doctores.getNombre();
@@ -44,6 +44,6 @@ public class DatosDoctores {
         
       
         
-        DoctorList.add(new Doctores(codigo, nombre, apellido, especialidad,contraseña,telefono,edad, genero));
+        DoctorList.add(new Doctors(codigo, nombre, apellido, especialidad,contraseña,telefono,edad, genero));
     }
 }

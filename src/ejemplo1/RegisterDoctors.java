@@ -14,7 +14,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Register extends JFrame implements ActionListener {
+public class RegisterDoctors extends JFrame implements ActionListener {
 
     private JTextField firstNameField;
     private JTextField lastNameField;
@@ -26,7 +26,7 @@ public class Register extends JFrame implements ActionListener {
 
     JButton registerButton;
 
-    public Register() {
+    public RegisterDoctors() {
 
         JLabel titleLabel = new JLabel("Registro de Doctor");
         titleLabel.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 20));
@@ -154,8 +154,8 @@ public class Register extends JFrame implements ActionListener {
             
             String selectedGender = (String) genderComboBox.getSelectedItem();
             
-            DatosDoctores.agregarDoctores(DatosDoctores.contador, firstName, lastName, selectspecialty, password, phone, age, selectedGender);
-            DatosDoctores.contador++;
+            DoctorsData.agregarDoctores(DoctorsData.contador, firstName, lastName, selectspecialty, password, phone, age, selectedGender);
+            DoctorsData.contador++;
             
             this.dispose();
             

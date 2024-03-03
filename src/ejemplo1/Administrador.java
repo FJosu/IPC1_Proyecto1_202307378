@@ -100,7 +100,7 @@ public class Administrador extends JFrame implements ActionListener {
         // Crear un modelo de tabla y agregar datos de ejemplo
         String[] columnsNames = {"Código","Nombre", "Apellido", "Especialidad", "Contraseña","Teléfono","Edad","Género"};
         // Crear una instancia de JTable con los datos y nombres de columna
-        JTable table_estudiante = new JTable(DatosDoctores.convertirDatosDoctores_tabla(), columnsNames);
+        JTable table_estudiante = new JTable(DoctorsData.convertirDatosDoctores_tabla(), columnsNames);
         table_estudiante.setBackground(new Color (217, 234, 253));
         
 
@@ -176,7 +176,9 @@ public class Administrador extends JFrame implements ActionListener {
         // Crear un modelo de tabla y agregar datos de ejemplo
        String[] columnspaciente = {"Código","Nombre", "Apellido","Edad","Género","Contraseña"};
          //Crear una instancia de JTable con los datos y nombres de columna
-        JTable table_paciente = new JTable(DatosPaciente.convertirDatosPaciente_tabla(), columnspaciente);
+        JTable table_paciente = new JTable(DataPatient.convertirDatosPaciente_tabla(), columnspaciente);
+         table_paciente.setBackground(new Color (217, 234, 253));
+
 
         // Crear un JScrollPane para la tabla (permite desplazarse por la tabla si es necesario)
         JScrollPane scrollPanel = new JScrollPane(table_paciente);
@@ -250,7 +252,7 @@ public class Administrador extends JFrame implements ActionListener {
         String[] columnsproducto = {"Códgio","Nombre","Cantidad","Descripción","Precio"};
         // Crear una instancia de JTable con los datos y nombres de columna
         JTable table_producto = new JTable(ProductData.convertirDatosProducto_tabla(), columnsproducto);
-        table_producto.setBackground(Color.red);
+        table_producto.setBackground(new Color (217, 234, 253));
 
         // Crear un JScrollPane para la tabla (permite desplazarse por la tabla si es necesario)
         JScrollPane scrollPanel2 = new JScrollPane(table_producto);
@@ -276,6 +278,12 @@ public class Administrador extends JFrame implements ActionListener {
         this.setResizable(false); // Deshabilitar la capacidad de cambiar el tamaño de la ventana
         this.setVisible(true); // Hacer la ventana visible
         this.setBackground(new Color (131, 193, 255));
+        
+        
+        
+        
+        
+        
     }
 
     //=========Método Abstracto para los eventos==============
@@ -286,10 +294,10 @@ public class Administrador extends JFrame implements ActionListener {
             Login vtn_login= new Login();
         }else if(e.getSource()==btnRegistro){
             this.dispose();
-            Register vtn_registro= new Register();
+            RegisterDoctors vtn_registro= new RegisterDoctors();
         }else if(e.getSource()==btnRegistro2){
             this.dispose();
-            RegisterPacient vtn_registropa = new RegisterPacient();
+            RegisterPatient vtn_registropa = new RegisterPatient();
             
         }else if (e.getSource()==btn_salir2) {
             this.dispose();
@@ -305,5 +313,6 @@ public class Administrador extends JFrame implements ActionListener {
             this.dispose();
             
     }
+        
     }
 }

@@ -10,9 +10,9 @@ package ejemplo1;
  */
 import java.util.ArrayList;
 
-public class DatosPaciente {
+public class DataPatient {
 
-    public static ArrayList<Pacientes> PacientList = new ArrayList<>();
+    public static ArrayList<Patient> PacientList = new ArrayList<>();
     public static int  contador=1;
     public static void main(String[] args) {
 
@@ -25,7 +25,7 @@ public class DatosPaciente {
         Object[][] arreglo = new Object[filas][6];
         
         for (int i = 0; i < filas; i++) {
-                Pacientes temp_paciente= PacientList.get(i);
+                Patient temp_paciente= PacientList.get(i);
                 
                 arreglo[i][0]=temp_paciente.getCodigo();
                 arreglo[i][1]=temp_paciente.getNombre();
@@ -45,6 +45,6 @@ public class DatosPaciente {
         
       
         
-        PacientList.add(new Pacientes(codigo, nombre, apellido,contraseña,edad, genero));
+        PacientList.add(new Patient(codigo, nombre, apellido,contraseña,edad, genero));
     }
 }

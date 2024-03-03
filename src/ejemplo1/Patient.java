@@ -8,7 +8,7 @@ package ejemplo1;
  *
  * @author fjosu
  */
-public class Pacientes {
+public class Patient {
     private int codigo;
     private String nombre;
     private String apellido;
@@ -17,7 +17,7 @@ public class Pacientes {
 
     private String edad;
     private String genero;
-    public Pacientes(int codigo, String nombre, String apellido,String contraseña, String edad,  String genero){
+    public Patient(int codigo, String nombre, String apellido,String contraseña, String edad,  String genero){
         this.codigo = codigo;
         this.nombre = nombre;
         this.apellido = apellido;

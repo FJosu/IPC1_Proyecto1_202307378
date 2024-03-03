@@ -8,7 +8,7 @@ package ejemplo1;
  *
  * @author fjosu
  */
-public class Productos {
+public class Products {
     private int codigo;
     private String nombre;
     private String precio;
@@ -16,7 +16,7 @@ public class Productos {
     private String cantidad;
     
 
-    public Productos(int codigo, String nombre, String precio,String descripcion,String cantidad) {
+    public Products(int codigo, String nombre, String precio,String descripcion,String cantidad) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precio;

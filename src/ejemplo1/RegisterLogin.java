@@ -4,27 +4,32 @@
  */
 package ejemplo1;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Panel;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author fjosu
  */
-import javax.swing.*;
-import java.awt.*;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-
-public class RegisterPacient extends JFrame implements ActionListener{
+public class RegisterLogin extends JFrame implements ActionListener{
     private JTextField firstNameField;
     private JTextField lastNameField;
     private JTextField PasswordField;
     private JTextField AgeField;
     private JComboBox<String> genderComboBox;
-
     JButton registerButton;
-    public RegisterPacient(){
-    JLabel titleLabel = new JLabel("Registro de Paciente");
+    
+    public RegisterLogin(){
+        JLabel titleLabel = new JLabel("Registro de Paciente");
         titleLabel.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 20));
         titleLabel.setBounds(150, 10, 200, 30);
         titleLabel.setBackground(new Color (217, 234, 253));
@@ -112,9 +117,9 @@ public class RegisterPacient extends JFrame implements ActionListener{
         fondo.setBounds(0, 0, 500, 350);
         fondo.setBackground(new Color (217, 234, 253));
         this.add(fondo);
-        
- }
-     public void actionPerformed(ActionEvent e) {
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
         if (e.getSource() == registerButton) {
             String firstName = firstNameField.getText();
             String lastName = lastNameField.getText();
@@ -123,12 +128,13 @@ public class RegisterPacient extends JFrame implements ActionListener{
             
             String selectedGender = (String) genderComboBox.getSelectedItem();
             
-            DatosPaciente.agregarPaciente(DatosPaciente.contador, firstName, lastName, password,age, selectedGender);
-            DatosPaciente.contador++;
+            DataPatient.agregarPaciente(DataPatient.contador, firstName, lastName, password,age, selectedGender);
+            DataPatient.contador++;
             this.dispose();
             Login vtn_login= new Login();
             
-}
+        }
      }
+    
+     
 }
-
