@@ -6,30 +6,26 @@ package ejemplo1;
 
 /**
  *
- 
+ * @author fjosu
  */
-public class Doctores {
+public class Pacientes {
     private int codigo;
     private String nombre;
     private String apellido;
-    private String especialidad;
+
     private String contraseña;
-    private String telefono;
+
     private String edad;
     private String genero;
-
-    public Doctores(int codigo, String nombre, String apellido, String especialidad,String contraseña,String telefono, String edad,  String genero) {
+    public Pacientes(int codigo, String nombre, String apellido,String contraseña, String edad,  String genero){
         this.codigo = codigo;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.especialidad = especialidad;
         this.contraseña = contraseña;
-        this.telefono = telefono;
         this.edad = edad;
-        this.genero = genero;
+        this.genero = genero;  
     }
-
-    /**
+     /**
      * @return the codigo
      */
     public int getCodigo() {
@@ -74,19 +70,7 @@ public class Doctores {
     /**
      * @return the especialidad
      */
-    public String getEspecialidad() {
-        return especialidad;
-    }
-
-    /**
-     * @param especialidad the especialidad to set
-     */
-    public void setEspecialidad(String Specialty) {
-        this.especialidad = especialidad;
-    }
-     /**
-     * @return the contraseña
-     */
+    
     public String getContraseña() {
         return contraseña;
     }
@@ -97,19 +81,8 @@ public class Doctores {
     public void setContraseña(String Password) {
         this.contraseña = contraseña;
     }
-     /**
-     * @return the telefono
-     */
-    public String getTelefono() {
-        return telefono;
-    }
-
-    /**
-     * @param telefono the telefono to set
-     */
-    public void setTelefono(String Phone) {
-        this.telefono = telefono;
-    }
+    
+  
      /**
      * @return the edad
      */
@@ -120,7 +93,7 @@ public class Doctores {
     /**
      * @param edad the edad to set
      */
-    public void seEdad(String Age) {
+    public void setEdad(String Age) {
         this.edad = edad;
     }
 
@@ -137,7 +110,4 @@ public class Doctores {
     public void setGenero(String genero) {
         this.genero = genero;
     }
-     
-    
-    
 }

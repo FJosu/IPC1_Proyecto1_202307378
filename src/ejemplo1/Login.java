@@ -27,10 +27,11 @@ public class Login extends JFrame implements ActionListener {
         
         // Etiqueta con el título "Login"
         JLabel titleLabel= new JLabel("Welcome");
-        titleLabel.setBounds(50, 50, 300, 60); // Posición y tamaño (x, y, width, height)
-        titleLabel.setBackground(Color.red);
-        titleLabel.setFont(new Font("Kristen ITC", Font.BOLD, 50)); // Establece el tipo de letra y el tamaño
+        titleLabel.setBounds(50, 50, 250, 60); // Posición y tamaño (x, y, width, height)
         
+        titleLabel.setFont(new Font("Kristen ITC", Font.BOLD, 50)); // Establece el tipo de letra y el tamaño
+        titleLabel.setBackground(new Color (217, 234, 253));
+        titleLabel.setOpaque(true);
         /*
         x: La posición horizontal de la esquina superior izquierda de la ventana en píxeles desde el borde izquierdo de la pantalla.
         y: La posición vertical de la esquina superior izquierda de la ventana en píxeles desde la parte superior de la pantalla.
@@ -49,24 +50,30 @@ public class Login extends JFrame implements ActionListener {
 
         //JLabel Para mostrar la imagen
         JLabel imageLabel = new JLabel(adjustedImageIcon);
-        imageLabel.setBounds(320, 30, 150, 100);
+        imageLabel.setBounds(320, 30, 160, 100);
+        imageLabel.setBackground(new Color (217, 234, 253));
+        imageLabel.setOpaque(true);
         this.add(imageLabel);
 
         //Etiqueta para el nombre de usuario
         JLabel usernameLabel = new JLabel("Código:");
-        
+        usernameLabel.setBackground(new Color (217, 234, 253));
+        usernameLabel.setOpaque(true);
         usernameLabel.setBounds(50, 140, 80, 20);
         usernameLabel.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 10)); 
-        usernameLabel.setBackground(new Color (104, 177, 250));
+        
         this.add(usernameLabel);
         //Campi de texto para el nombre del usuario
         usernameFiel = new JTextField();
         usernameFiel.setBounds(130, 140, 260, 25); //(x, y, width, height)
-        
+       usernameFiel.setBackground(new Color (202, 222, 246));
+       
         this.add(usernameFiel);
 
         //Etiqeuta para la contraseña
         JLabel passwordLabel = new JLabel("Contraseña:");
+        passwordLabel.setBackground(new Color (217, 234, 253));
+        passwordLabel.setOpaque(true);
         passwordLabel.setBounds(50, 180, 80, 25);
         passwordLabel.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 10)); 
         
@@ -75,6 +82,8 @@ public class Login extends JFrame implements ActionListener {
         
         passwordFiel = new JPasswordField();
         passwordFiel.setBounds(130, 180, 260, 25);
+        passwordFiel.setBackground(new Color (202, 222, 246));
+        
         this.add(passwordFiel);
 
         //--------------------
@@ -82,7 +91,7 @@ public class Login extends JFrame implements ActionListener {
         JButton loginButton = new JButton("Iniciar Sesión");
         loginButton.setBounds(60, 220, 150, 25); //Ajuste de posición
         loginButton.setForeground(Color.WHITE); // Ajuste de color de letra
-        loginButton.setBackground(new Color(43, 191, 19)); // Ajuste de color de boton, con color en RGB
+        loginButton.setBackground(new Color(97, 145, 199)); // Ajuste de color de boton, con color en RGB
         loginButton.addActionListener(this); // Agregamos un ActionListener al botón
         loginButton.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 10)); 
         this.add(loginButton);
@@ -90,7 +99,8 @@ public class Login extends JFrame implements ActionListener {
         // Botón de Registro
         JButton registerButton = new JButton("Registrarse");
         registerButton.setBounds(230, 220, 150, 25); //Ajuste de posición
-        registerButton.setBackground(new Color(104, 177, 250)); // Ajuste de color de boton, con color en RGB
+        registerButton.setForeground(Color.WHITE);
+        registerButton.setBackground(new Color(97, 145, 199)); // Ajuste de color de boton, con color en RGB
         registerButton.addActionListener(this); // Agregamos un ActionListener al botón
         registerButton.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 10)); 
         this.add(registerButton);
@@ -103,10 +113,10 @@ public class Login extends JFrame implements ActionListener {
         this.setResizable(false);  // No permite redimensionar la ventana
         this.setLocationRelativeTo(null); //Despliega la ventana en el centro de la pantalla
         this.setVisible(true); // Hace visible la ventana
-        //Panel fondo = new Panel();
-        //fondo.setBounds(0, 0, 500, 350);
-        //fondo.setBackground(Color.white);
-        //this.add(fondo);
+        Panel fondo = new Panel();
+        fondo.setBounds(0, 0, 500, 350);
+        fondo.setBackground(new Color (217, 234, 253));
+        this.add(fondo);
         
 
     }
@@ -127,7 +137,10 @@ public class Login extends JFrame implements ActionListener {
             }
             
         } else if (Ae.getActionCommand().equals("Registrarse")) {
-            Register vtn_registro = new Register();
+            RegisterPacient vtn_registropa = new RegisterPacient();
+            this.dispose();
+            
+            
         }
     }
 
