@@ -1,0 +1,38 @@
+
+public void updatedoctor(String codigo, String nuevosNombres, String nuevosApellidos, String nuevaEspecialidad,
+            String nuevoGenero, String nuevoTelefono, int nuevaEdad) {
+        for (int i = 0; i < doctoresData.size(); i++) {
+            Doctor doctor = doctoresData.get(i);
+            if (doctor.getCodigo().equals(codigo)) {
+                doctor.setNombres(nuevosNombres);
+                doctor.setApellidos(nuevosApellidos);
+                doctor.setEspecialidad(nuevaEspecialidad);
+                doctor.setGenero(nuevoGenero);
+                doctor.setTelefono(nuevoTelefono);
+                doctor.setEdad(nuevaEdad);
+
+                // Actualizar los datos en la tabla
+                doctoresTableModel.setValueAt(nuevosNombres, i, 1);
+                doctoresTableModel.setValueAt(nuevosApellidos, i, 2);
+                doctoresTableModel.setValueAt(nuevaEspecialidad, i, 3);
+                doctoresTableModel.setValueAt(nuevoGenero, i, 4);
+                doctoresTableModel.setValueAt(nuevoTelefono, i, 5);
+                doctoresTableModel.setValueAt(nuevaEdad, i, 6);
+
+                // Actualizar los datos en el archivo CSV
+                try {
+                    FileWriter writer = new FileWriter("doctores.csv");
+                    for (Doctor d : doctoresData) {
+                        writer.write(d.getCodigo() + "," + d.getNombres() + "," + d.getApellidos() + ","
+                                + d.getEspecialidad() + "," + d.getGenero() + "," + d.getTelefono() + "," + d.getEdad()
+                                + "\n");
+                    }
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                break;
+            }
+        }
+    
