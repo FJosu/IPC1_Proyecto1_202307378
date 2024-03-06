@@ -20,6 +20,8 @@ public class RegisterPatient extends JFrame implements ActionListener {
     private JTextField PasswordField;
     private JTextField AgeField;
     private JComboBox<String> genderComboBox;
+    private JTable table_doctores; // Declarar la variable table_doctores
+
 
     JButton registerButton;
 
@@ -123,11 +125,12 @@ public class RegisterPatient extends JFrame implements ActionListener {
             String selectedGender = (String) genderComboBox.getSelectedItem();
 
             DataPatient.agregarPaciente(DataPatient.contador, firstName, lastName, password, age, selectedGender);
+            DataPatient.contador++;
 
             this.dispose();
             JOptionPane.showMessageDialog(this, "Paciente registrado exitosamente", "Confirmación de Registro", 1);
-            this.dispose();
-            Administrador vtn_andmin = new Administrador();
+
+                 Administrador vtn_admin = new Administrador();
 
         }
     }

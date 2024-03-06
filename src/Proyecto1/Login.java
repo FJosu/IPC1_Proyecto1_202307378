@@ -13,6 +13,10 @@ public class Login extends JFrame implements ActionListener {
 
     private JTextField usernameFiel;
     private JPasswordField passwordFiel;
+    private JTable table_doctores; // Declarar la variable table_doctores
+    private JRadioButton optiopatient;
+    private JRadioButton optiondoctor;
+
 
     public Login() {
 
@@ -79,16 +83,11 @@ public class Login extends JFrame implements ActionListener {
 
         this.add(passwordFiel);
 
-        ButtonGroup chose = new ButtonGroup();
-        JRadioButton c1 = new JRadioButton("Hombre", true);
-        chose.add(c1);
-        JRadioButton c2 = new JRadioButton("Mujer", false);
-        chose.add(c2);
-
+        
         // --------------------
         // Boton de inicio de sesión
         JButton loginButton = new JButton("Iniciar Sesión");
-        loginButton.setBounds(60, 220, 150, 25); // Ajuste de posición
+        loginButton.setBounds(80, 270, 150, 25); // Ajuste de posición
         loginButton.setForeground(Color.WHITE); // Ajuste de color de letra
         loginButton.setBackground(new Color(97, 145, 199)); // Ajuste de color de boton, con color en RGB
         loginButton.addActionListener(this); // Agregamos un ActionListener al botón
@@ -97,12 +96,30 @@ public class Login extends JFrame implements ActionListener {
 
         // Botón de Registro
         JButton registerButton = new JButton("Registrarse");
-        registerButton.setBounds(230, 220, 150, 25); // Ajuste de posición
+        registerButton.setBounds(250, 270, 150, 25); // Ajuste de posición
         registerButton.setForeground(Color.WHITE);
         registerButton.setBackground(new Color(97, 145, 199)); // Ajuste de color de boton, con color en RGB
         registerButton.addActionListener(this); // Agregamos un ActionListener al botón
         registerButton.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 10));
         this.add(registerButton);
+        
+        JRadioButton optiopatient= new JRadioButton("Paciente");
+        optiopatient.setBounds(270, 220, 150, 25); // Posición y tamaño (x, y, width, height)
+        optiopatient.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 15)); // Establece el tipo de letra y el tamaño
+        optiopatient.setBackground(new Color(217, 234, 253)); // Color
+        optiopatient.setOpaque(true);  
+        this.add(optiopatient);
+
+        JRadioButton optiondoctor= new JRadioButton("Doctor");
+        optiondoctor.setBounds(100, 220, 150, 25); // Posición y tamaño (x, y, width, height)
+        optiondoctor.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 15)); // Establece el tipo de letra y el tamaño
+        optiondoctor.setBackground(new Color(217, 234, 253)); // Color
+        optiondoctor.setOpaque(true);  
+        this.add(optiondoctor);
+        
+        ButtonGroup bg = new ButtonGroup();
+        bg.add(optiopatient);
+        bg.add(optiondoctor);
 
         // Creacion de la ventana de inicio
         this.setTitle("Login"); // Título de la ventana
@@ -117,34 +134,48 @@ public class Login extends JFrame implements ActionListener {
         fondo.setBounds(0, 0, 500, 350);
         fondo.setBackground(new Color(217, 234, 253));
         this.add(fondo);
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (optiondoctor.isSelected()) {
+                    Doctors_Module doc = new Doctors_Module();
+                    doc.setVisible(true);
+                    Login.this.setVisible(false);
+            } else if (optiopatient.isSelected()) {
+                Patient_Module Pac = new Patient_Module();
+                Pac.setVisible(true);
+                Login.this.setVisible(false);
+            }
 
+
+        }
+        });
     }
-
     @Override
     public void actionPerformed(ActionEvent Ae) {
         if (Ae.getActionCommand().equals("Iniciar Sesión")) {
             String username = usernameFiel.getText();
             String pwd = new String(passwordFiel.getPassword());
-            System.out.println("Usuario: " + username);
-            System.out.println("Contraseña:" + pwd);
 
             if (username.equals("") && pwd.equals("")) {
                 Administrador vtn_admin = new Administrador();
                 this.dispose();
-            } else if (DataPatient.verificarCredenciales(Integer.parseInt(username), pwd)) {
-                Patient_Module patientModule = new Patient_Module(Patient_Module.patient);
-                this.dispose();
-
-            } else
+            } else {
                 JOptionPane.showMessageDialog(this, "User and/or password incorrect.", "Error con el LOGIN", 0);
+            }
 
         } else if (Ae.getActionCommand().equals("Registrarse")) {
             RegisterLogin vtn_registropa = new RegisterLogin();
-            // Patient_Module vtn_andmin = new Patient_Module();
+            //Patient_Module vtn_andmin = new Patient_Module();
 
             this.dispose();
 
         }
     }
 
+
+
 }
+
+
+

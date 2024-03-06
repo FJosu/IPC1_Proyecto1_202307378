@@ -36,10 +36,7 @@ public class DataPatient {
             arreglo[i][3] = temp_paciente.getContraseña();
             arreglo[i][4] = temp_paciente.getEdad();
             arreglo[i][5] = temp_paciente.getGenero();
-            for (Patient patient : PacientList) {
-                Patient_Module patientModule = new Patient_Module(patient);
-                patientModules.add(patientModule);
-            }
+            
 
         }
 
@@ -68,6 +65,9 @@ public class DataPatient {
             }
         }
         return false; // Las credenciales no son válidas
+    }
+    public static void DeleteDoctor(int counter) {
+        PacientList.removeIf(temppatient -> temppatient.getCodigo() == counter);
     }
 
 }

@@ -27,7 +27,7 @@ public class ProductData {
         Object[][] arreglo = new Object[filas][5];
         
         for (int i = 0; i < filas; i++) {
-                Products temp_Producto= Productlist.get(i);
+                Products temp_Producto = Productlist.get(i);
                 
                 arreglo[i][0]=temp_Producto.getCodigo();
                 arreglo[i][1]=temp_Producto.getNombre();
@@ -48,5 +48,8 @@ public class ProductData {
       
         
         Productlist.add(new Products(codigo, nombre, precio, descripcion,cantidad));
+    }
+     public static void DeleteProduct(int counter) {
+        Productlist.removeIf(tempproduct -> tempproduct.getCodigo() == counter);
     }
 }

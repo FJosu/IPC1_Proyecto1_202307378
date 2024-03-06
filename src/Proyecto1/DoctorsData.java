@@ -34,14 +34,28 @@ public class DoctorsData {
             arreglo[i][7] = temp_doctores.getGenero();
 
         }
+        
 
         return arreglo;
 
     }
 
+
     public static void agregarDoctores(int codigo, String nombre, String apellido, String especialidad,
             String contraseña, String telefono, String edad, String genero) {
 
         DoctorList.add(new Doctors(codigo, nombre, apellido, especialidad, contraseña, telefono, edad, genero));
+        
+    }
+     public static void DeleteDoctor(int counter) {
+        DoctorList.removeIf(tempDoctor -> tempDoctor.getCodigo() == counter);
+    }
+     public static boolean verificarCredenciales(int codigo, String contraseña) {
+        for (Doctors doctors : DoctorList) {
+            if (doctors.getCodigo() == codigo && doctors.getContraseña().equals(contraseña)) {
+                return true; // Las credenciales son válidas
+            }
+        }
+        return false; // Las credenciales no son válidas
     }
 }

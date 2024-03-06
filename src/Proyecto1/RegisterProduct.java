@@ -21,6 +21,8 @@ public class RegisterProduct extends JFrame implements ActionListener {
     private JTextField DescriptionField;
     private JTextField amountfield;
     JButton registerButton;
+    private JTable table_doctores; // Declarar la variable table_doctores
+
 
     public RegisterProduct() {
         JLabel titleLabel = new JLabel("Registro de Producto");
@@ -116,7 +118,7 @@ public class RegisterProduct extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(this, "Producto registrado exitosamente", "Confirmación de Registro", 1);
             this.dispose();
 
-            Administrador vtn_admin = new Administrador();
+                 Administrador vtn_admin = new Administrador();
         }
     }
 

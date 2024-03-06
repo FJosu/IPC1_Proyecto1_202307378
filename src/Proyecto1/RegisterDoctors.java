@@ -23,6 +23,8 @@ public class RegisterDoctors extends JFrame implements ActionListener {
     private JTextField AgeField;
     private JComboBox<String> genderComboBox;
     private JComboBox<String> specialty;
+    private JTable table_doctores; // Declarar la variable table_doctores
+
 
     JButton registerButton;
 
@@ -161,7 +163,7 @@ public class RegisterDoctors extends JFrame implements ActionListener {
             this.dispose();
             JOptionPane.showMessageDialog(this, "Doctor registrado exitosamente", "Confirmación de Registro", 1);
             this.dispose();
-            Administrador vtn_admin = new Administrador();
+                 Administrador vtn_admin = new Administrador();
         }
     }
 

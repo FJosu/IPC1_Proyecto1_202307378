@@ -23,9 +23,8 @@ public class Patient_Module extends JFrame implements ActionListener {
     private JTextField description;
     public static Patient patient;
 
-    public Patient_Module(Patient patient) {
-        this.patient = patient;
-
+    public Patient_Module() {
+        
         JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 
         // Crear un objeto JTabbedPane para gestionar pestañas
@@ -272,7 +271,7 @@ public class Patient_Module extends JFrame implements ActionListener {
 
             this.dispose();
 
-            Patient_Module patientModule = new Patient_Module(Patient_Module.patient);
+                Patient_Module patientModule = new Patient_Module();
 
         }
 
