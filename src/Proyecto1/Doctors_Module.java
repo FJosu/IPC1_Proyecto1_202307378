@@ -5,6 +5,8 @@
 package Proyecto1;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -12,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.SwingConstants;
 
 /**
  *
@@ -54,7 +57,70 @@ public class Doctors_Module extends JFrame implements ActionListener {
         editprofile.addActionListener(this);
         this.add(editprofile);
         // ===========================Pestaña Doctores============================00
+        JLabel Title = new JLabel("");
+        // Estable_estudiantecer la posición y el tamaño del JLabel en el JPanel
+        Title.setBounds(25, 25, 800, 50);
+        // Estable_estudiantecer un borde alrededor del JLabel con un grosor de 2
+        // píxeles y color negro
+        // lbl4.setBorder(BorderFactory.createLineBorder(new Color (118, 165, 217), 2));
+        // Estable_estudiantecer el color de fondo del JLabel como celeste
+        Title.setBackground(new Color(217, 234, 253));
+        Title.setForeground(new Color(12, 58, 109));
+        // Hacer que el JLabel sea opaco para que se pueda ver el color de fondo
+        Title.setOpaque(true);
+        // Alinear vertical y horizontalmente el texto del JLabel al centro
+        Title.setVerticalAlignment(SwingConstants.CENTER);
+        Title.setHorizontalAlignment(SwingConstants.CENTER);
+        // Estable_estudiantecer el tamaño de la fuente del JLabel, negrita y tamaño 24
+        Title.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 24));
+        // Hacer que el JLabel sea visible
+        Title.setVisible(true);
 
+        // Agregar el JLabel al JPanel llamado pest1
+        pest1.add(Title);
+        
+        Panel panel1 = new Panel();
+        panel1.setBounds(50, 120, 800, 70);
+        panel1.setBackground(new Color(202, 222, 246));
+        this.add(panel1);
+        
+        Panel panel2 = new Panel();
+        panel2.setBounds(50, 220, 800, 70);
+        panel2.setBackground(new Color(202, 222, 246));
+        this.add(panel2);
+        
+        Panel panel3 = new Panel();
+        panel3.setBounds(50, 320, 800, 70);
+        panel3.setBackground(new Color(202, 222, 246));
+        this.add(panel3);
+        
+        Panel panel4 = new Panel();
+        panel4.setBounds(50, 420, 800, 70);
+        panel4.setBackground(new Color(202, 222, 246));
+        this.add(panel4);
+        
+        Panel panel5 = new Panel();
+        panel5.setBounds(50, 520, 800, 70);
+        panel5.setBackground(new Color(202, 222, 246));
+        this.add(panel5);
+        
+        Panel panel6 = new Panel();
+        panel6.setBounds(50, 620, 800, 70);
+        panel6.setBackground(new Color(202, 222, 246));
+        this.add(panel6);
+        
+        Panel panel7 = new Panel();
+        panel7.setBounds(50, 720, 800, 70);
+        panel7.setBackground(new Color(202, 222, 246));
+        this.add(panel7);
+     
+        
+        
+                
+        
+        
+        
+        
         // ===========================Pestaña 2============================
 
         // Agregar el JTabbedPane al contenido del JFrame

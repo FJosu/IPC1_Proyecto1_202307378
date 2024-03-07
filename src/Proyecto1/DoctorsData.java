@@ -5,10 +5,12 @@ package Proyecto1;
  * @author fjosu
  */
 import java.util.ArrayList;
+import java.util.List;
 
 public class DoctorsData {
+    public static List<Doctors> DoctorList = new ArrayList<>();
 
-    public static ArrayList<Doctors> DoctorList = new ArrayList<>();
+    //public static ArrayList<Doctors> DoctorList = new ArrayList<>();
     public static int contador = 0001;
 
     public static void main(String[] args) {
@@ -57,5 +59,35 @@ public class DoctorsData {
             }
         }
         return false; // Las credenciales no son válidas
+<<<<<<< HEAD
+    }
+     public static List<Doctors> getListDoctors() {
+        return DoctorList;
+    }
+
+    public static void updateDoctor(Doctors doctor) {
+    for (Doctors doctors : DoctorList) {
+        if (doctors.getCodigo() == doctor.getCodigo()) {
+            doctors.setNombre(doctor.getNombre());
+            doctors.setApellido(doctor.getApellido());
+            doctors.setEspecialidad(doctor.getEspecialidad());
+            doctors.setContraseña(doctor.getContraseña());
+            doctors.setTelefono(doctor.getTelefono());
+            doctors.setEdad(doctor.getEdad());
+            
+            break; // Salir del bucle una vez que se actualiza el doctor
+        }
+    }
+}
+
+    public static Doctors getDoctor(int codigo) {
+        for (Doctors doctors : DoctorList) {
+            if (doctors.getCodigo() == codigo) {
+                return doctors;
+            }
+        }
+        return null;
+=======
+>>>>>>> 9b8e9a1773219999f715ae6efeb5dbf739bbcfe4
     }
 }

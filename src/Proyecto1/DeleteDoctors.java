@@ -23,9 +23,15 @@ public class DeleteDoctors extends JFrame implements ActionListener {
             title.setForeground(Color.BLACK);
             this.add(title);
     
+<<<<<<< HEAD
+            JLabel code = new JLabel("Código:");
+            code.setBounds(29, 100, 200, 25);
+            this.add(code);
+=======
             JLabel ID = new JLabel("ID:");
             ID.setBounds(29, 100, 200, 25);
             this.add(ID);
+>>>>>>> 9b8e9a1773219999f715ae6efeb5dbf739bbcfe4
     
             txtId = new JTextField();
             txtId.setBounds(90, 100, 200, 25);

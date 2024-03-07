@@ -70,8 +70,8 @@ public class RegisterDoctors extends JFrame implements ActionListener {
         especialtyLabel.setOpaque(true);
         this.add(especialtyLabel);
 
-        String[] Specialty = { "Cardiología", "Dermatología", "Gatroenterología", "Genecología", "Neumología",
-                "Neurología", "Pediatría", "Psicología", "Traumatología" };
+        String[] Specialty = { "Cardiología", "Dermatología", "Gatroenterología", "Ginecología", "Neumología",
+                "Neurología","Oftamología", "Pediatría", "Psicología", "Traumatología" };
         specialty = new JComboBox<>(Specialty);
         specialty.setBounds(180, 130, 210, 25);
         specialty.setBackground(new Color(202, 222, 246));

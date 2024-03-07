@@ -80,8 +80,8 @@ public class Patient_Module extends JFrame implements ActionListener {
         specialty.setForeground(new Color(12, 58, 109));
         specialty.setVisible(true);
         pest1.add(specialty);
-        String[] specialty2 = { "Cardiología", "Dermatología", "Gatroenterología", "Genecología", "Neumología",
-                "Neurología", "Pediatría", "Psicología", "Traumatología" };
+        String[] specialty2 = {  "Cardiología", "Dermatología", "Gatroenterología", "Ginecología", "Neumología",
+                "Neurología","Oftamología", "Pediatría", "Psicología", "Traumatología"};
         specialtycombo = new JComboBox<>(specialty2);
         specialtycombo.setBounds(280, 200, 150, 30);
         specialtycombo.setBackground(new Color(202, 222, 246));

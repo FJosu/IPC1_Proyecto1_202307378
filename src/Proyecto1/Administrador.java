@@ -471,6 +471,7 @@ public class Administrador extends JFrame implements ActionListener {
             this.dispose();
             Login vtn_login = new Login();
         }else if(e.getSource() == btnEliminar1) {
+<<<<<<< HEAD
             this.dispose();
             
                 DeleteDoctors delete= new DeleteDoctors();
@@ -482,6 +483,22 @@ public class Administrador extends JFrame implements ActionListener {
             this.dispose();
             
                 DeleteProduct delete= new DeleteProduct();
+        }else if(e.getSource() == btnActualizar1){
+            DoctorEdit edit=new DoctorEdit();
+            this.dispose();
+=======
+            this.dispose();
+            
+                DeleteDoctors delete= new DeleteDoctors();
+        }else if(e.getSource() == btnEliminar2) {
+            this.dispose();
+            
+                DeletePatient deletep= new DeletePatient();
+        }else if(e.getSource() == btnEliminar3) {
+            this.dispose();
+            
+                DeleteProduct delete= new DeleteProduct();
+>>>>>>> 9b8e9a1773219999f715ae6efeb5dbf739bbcfe4
         }
           
           

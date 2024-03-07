@@ -32,6 +32,14 @@ public class Doctors {
     /**
      * @return the codigo
      */
+    public int getId() {
+        return codigo;
+    }
+
+    public Doctors(int codigo) {
+        this.codigo = codigo;
+    }
+    
     public int getCodigo() {
         return codigo;
     }
@@ -81,7 +89,7 @@ public class Doctors {
     /**
      * @param especialidad the especialidad to set
      */
-    public void setEspecialidad(String Specialty) {
+    public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
      /**
@@ -94,7 +102,7 @@ public class Doctors {
     /**
      * @param contraseña the contraseña to set
      */
-    public void setContraseña(String Password) {
+    public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
      /**
@@ -107,7 +115,7 @@ public class Doctors {
     /**
      * @param telefono the telefono to set
      */
-    public void setTelefono(String Phone) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
      /**
@@ -120,7 +128,7 @@ public class Doctors {
     /**
      * @param edad the edad to set
      */
-    public void seEdad(String Age) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 
