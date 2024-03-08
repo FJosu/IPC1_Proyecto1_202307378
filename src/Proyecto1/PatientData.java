@@ -9,10 +9,11 @@ package Proyecto1;
  * @author fjosu
  */
 import java.util.ArrayList;
+import java.util.List;
 
-public class DataPatient {
+public class PatientData {
 
-    public static ArrayList<Patient> PacientList = new ArrayList<>();
+    private static List<Patient> PacientList = new ArrayList<>();
     public static ArrayList<Patient_Module> patientModules = new ArrayList<>();
     public static int contador = 1;
 
@@ -66,8 +67,33 @@ public class DataPatient {
         }
         return false; // Las credenciales no son válidas
     }
-    public static void DeleteDoctor(int counter) {
+    public static void DeletePatient(int counter) {
         PacientList.removeIf(temppatient -> temppatient.getCodigo() == counter);
     }
+    public static List<Patient> getListPatients() {
+        return PacientList;
+    }
+
+    public static void updatePatients(Patient patient) {
+        for (Patient p : PacientList) {
+            if (p.getCodigo() == patient.getCodigo()) {
+
+                p.setNombre(patient.getNombre());
+                p.setApellido(patient.getApellido());
+                p.setContraseña(patient.getContraseña());
+                p.setEdad(patient.getEdad());
+
+            }
+        }
+    }
+    public static Patient getPatient(int codigo) {
+        for (Patient p : PacientList) {
+            if (p.getCodigo() == codigo) {
+                return p;
+            }
+        }
+        return null;
+
+}
 
 }

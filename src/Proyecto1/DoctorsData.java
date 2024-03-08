@@ -14,6 +14,7 @@ public class DoctorsData {
     public static int contador = 0001;
 
     public static void main(String[] args) {
+        
 
         Login vtn_login = new Login();
 
@@ -47,6 +48,11 @@ public class DoctorsData {
             String contraseña, String telefono, String edad, String genero) {
 
         DoctorList.add(new Doctors(codigo, nombre, apellido, especialidad, contraseña, telefono, edad, genero));
+
+
+       
+        
+        
         
     }
      public static void DeleteDoctor(int counter) {
@@ -59,7 +65,7 @@ public class DoctorsData {
             }
         }
         return false; // Las credenciales no son válidas
-<<<<<<< HEAD
+
     }
      public static List<Doctors> getListDoctors() {
         return DoctorList;
@@ -87,7 +93,6 @@ public class DoctorsData {
             }
         }
         return null;
-=======
->>>>>>> 9b8e9a1773219999f715ae6efeb5dbf739bbcfe4
+
     }
 }

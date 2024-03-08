@@ -24,6 +24,13 @@ public class Products {
         this.cantidad = cantidad;
         
     }
+    public int getId() {
+        return codigo;
+    }
+
+    public Products(int codigo) {
+        this.codigo = codigo;
+    }
  /**
      * @return the codigo
      */

@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/fjosu/OneDrive/Escritorio/IPC1_Proyecto1_202307378/src/Proyecto1/DeletePatient.java</file>
-            <file>file:/C:/Users/fjosu/OneDrive/Escritorio/IPC1_Proyecto1_202307378/src/Proyecto1/Administrador.java</file>
-            <file>file:/C:/Users/fjosu/OneDrive/Escritorio/IPC1_Proyecto1_202307378/src/Proyecto1/DeleteProduct.java</file>
-            <file>file:/C:/Users/fjosu/OneDrive/Escritorio/IPC1_Proyecto1_202307378/src/Proyecto1/DataPatient.java</file>
+            <file>file:/C:/Users/fjosu/OneDrive/Escritorio/IPC1_Proyecto1_202307378/src/Proyecto1/PatientProfileEdit.java</file>
+            <file>file:/C:/Users/fjosu/OneDrive/Escritorio/IPC1_Proyecto1_202307378/src/Proyecto1/Doctors_Module.java</file>
+            <file>file:/C:/Users/fjosu/OneDrive/Escritorio/IPC1_Proyecto1_202307378/src/Proyecto1/PatientEditing.java</file>
+            <file>file:/C:/Users/fjosu/OneDrive/Escritorio/IPC1_Proyecto1_202307378/src/Proyecto1/Patient_Module.java</file>
         </group>
     </open-files>
 </project-private>

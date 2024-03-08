@@ -10,10 +10,11 @@ package Proyecto1;
  */
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductData {
 
-    public static ArrayList<Products> Productlist = new ArrayList<>();
+    public static List<Products> Productlist = new ArrayList<>();
     public static int  contador=1;
     public static void main(String[] args) {
 
@@ -45,11 +46,37 @@ public class ProductData {
     
     public static void agregarProducto(int codigo, String nombre, String precio, String descripcion, String cantidad){
         
-      
-        
         Productlist.add(new Products(codigo, nombre, precio, descripcion,cantidad));
     }
      public static void DeleteProduct(int counter) {
         Productlist.removeIf(tempproduct -> tempproduct.getCodigo() == counter);
     }
+     
+      public static List<Products> getListProduct() {
+        return Productlist;
+    }
+
+    public static void updateProduct(Products product) {
+    for (Products products : Productlist) {
+        if (product.getCodigo() == product.getCodigo()) {
+            product.setNombre(product.getNombre());
+            product.setPrecio(product.getPrecio());
+            product.setDescripcion(product.getDescripcion());
+            product.setCantidad(product.getCantidad());
+            
+            break; // Salir del bucle una vez que se actualiza el doctor
+        }
+    }
+}
+
+    public static Products getProduct(int codigo) {
+        for (Products product : Productlist) {
+            if (product.getCodigo() == codigo) {
+                return product;
+            }
+        }
+        return null;
+
+    }
+   
 }

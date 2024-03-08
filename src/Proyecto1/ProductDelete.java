@@ -4,34 +4,32 @@
  */
 package Proyecto1;
 
+/**
+ *
+ * @author fjosu
+ */
  //Librerias importadas
       import javax.swing.*;
       import java.awt.*;
       import java.awt.event.ActionEvent;
       import java.awt.event.ActionListener;
 
-public class DeleteDoctors extends JFrame implements ActionListener {
+public class ProductDelete extends JFrame implements ActionListener {
     
     
         private JTextField txtId;
         private JButton Delete; 
     
-        public DeleteDoctors() {
-            JLabel title = new JLabel("¿Qué doctor deseas eliminar?");
+        public ProductDelete() {
+            JLabel title = new JLabel("¿Qué Producto deseas eliminar?");
             title.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 14));
             title.setBounds(45, -5, 300, 100);
             title.setForeground(Color.BLACK);
             this.add(title);
     
-<<<<<<< HEAD
-            JLabel code = new JLabel("Código:");
-            code.setBounds(29, 100, 200, 25);
-            this.add(code);
-=======
             JLabel ID = new JLabel("ID:");
             ID.setBounds(29, 100, 200, 25);
             this.add(ID);
->>>>>>> 9b8e9a1773219999f715ae6efeb5dbf739bbcfe4
     
             txtId = new JTextField();
             txtId.setBounds(90, 100, 200, 25);
@@ -48,7 +46,7 @@ public class DeleteDoctors extends JFrame implements ActionListener {
             this.add(Delete);
     
             // Título de la ventana
-            this.setTitle("Eliminar Doctor");
+            this.setTitle("Eliminar Producto");
             // Tamaño de la ventana
             this.setSize(350, 300);
             // No permitir modificar el tamaño de la ventana
@@ -73,16 +71,16 @@ public class DeleteDoctors extends JFrame implements ActionListener {
     
                 try {
                     // Conversión de edad de String a int
-                    int idDoctor = Integer.parseInt(ID);
+                    int productid = Integer.parseInt(ID);
                     // Si la conversión es exitosa, el sistema agrega el doctor
-                    DoctorsData.DeleteDoctor(idDoctor);
-                    JOptionPane.showMessageDialog(this, "Doctor eliminado con éxito!", "Confirmación", JOptionPane.PLAIN_MESSAGE);
+                    ProductData.DeleteProduct(productid);
+                    JOptionPane.showMessageDialog(this, "Producto eliminado con éxito!", "Confirmación", JOptionPane.PLAIN_MESSAGE);
                     this.dispose();
                     Administrador adminWindow = new Administrador();
                 
                 } catch (NumberFormatException ex) {
                     // Si la conversión falla, muestra un mensaje de error
-                    JOptionPane.showMessageDialog(this, "Por favor, ingrese una paciente válido.", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Por favor, ingrese un producto válido.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
     
             }

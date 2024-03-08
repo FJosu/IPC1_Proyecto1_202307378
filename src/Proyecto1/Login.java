@@ -17,7 +17,6 @@ public class Login extends JFrame implements ActionListener {
     private JRadioButton optiopatient;
     private JRadioButton optiondoctor;
 
-
     public Login() {
 
         // Etiqueta con el título "Login"
@@ -83,7 +82,6 @@ public class Login extends JFrame implements ActionListener {
 
         this.add(passwordFiel);
 
-        
         // --------------------
         // Boton de inicio de sesión
         JButton loginButton = new JButton("Iniciar Sesión");
@@ -102,21 +100,21 @@ public class Login extends JFrame implements ActionListener {
         registerButton.addActionListener(this); // Agregamos un ActionListener al botón
         registerButton.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 10));
         this.add(registerButton);
-        
-        JRadioButton optiopatient= new JRadioButton("Paciente");
+
+        JRadioButton optiopatient = new JRadioButton("Paciente");
         optiopatient.setBounds(270, 220, 150, 25); // Posición y tamaño (x, y, width, height)
         optiopatient.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 15)); // Establece el tipo de letra y el tamaño
         optiopatient.setBackground(new Color(217, 234, 253)); // Color
-        optiopatient.setOpaque(true);  
+        optiopatient.setOpaque(true);
         this.add(optiopatient);
 
-        JRadioButton optiondoctor= new JRadioButton("Doctor");
+        JRadioButton optiondoctor = new JRadioButton("Doctor");
         optiondoctor.setBounds(100, 220, 150, 25); // Posición y tamaño (x, y, width, height)
         optiondoctor.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 15)); // Establece el tipo de letra y el tamaño
         optiondoctor.setBackground(new Color(217, 234, 253)); // Color
-        optiondoctor.setOpaque(true);  
+        optiondoctor.setOpaque(true);
         this.add(optiondoctor);
-        
+
         ButtonGroup bg = new ButtonGroup();
         bg.add(optiopatient);
         bg.add(optiondoctor);
@@ -138,44 +136,50 @@ public class Login extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (optiondoctor.isSelected()) {
-                    Doctors_Module doc = new Doctors_Module();
-                    doc.setVisible(true);
-                    Login.this.setVisible(false);
-            } else if (optiopatient.isSelected()) {
-                Patient_Module Pac = new Patient_Module();
-                Pac.setVisible(true);
-                Login.this.setVisible(false);
+                    String username = usernameFiel.getText();
+                    String pwd = new String(passwordFiel.getPassword());
+                    if (DoctorsData.verificarCredenciales(Integer.parseInt(username), pwd)) {
+                        Doctors_Module Doc = new Doctors_Module();
+                       Doc.setVisible(true);
+                      Login.this.setVisible(false);
+                    } else {
+                      JOptionPane.showMessageDialog(Login.this, "User and/or password incorrect.",
+                                "Error con el LOGIN", 0);
+                    }
+                } else if (optiopatient.isSelected()) {
+                    String username = usernameFiel.getText();
+                    String pwd = new String(passwordFiel.getPassword());
+                    if (PatientData.verificarCredenciales(Integer.parseInt(username), pwd)) {
+                        Patient_Module Pac = new Patient_Module();
+                        Pac.setVisible(true);
+                        Login.this.setVisible(false);
+                    } else {
+                        JOptionPane.showMessageDialog(Login.this, "User and/or password incorrect.",
+                                "Error con el LOGIN", 0);
+                    }
+
+                }
             }
-
-
-        }
         });
     }
+
     @Override
     public void actionPerformed(ActionEvent Ae) {
         if (Ae.getActionCommand().equals("Iniciar Sesión")) {
             String username = usernameFiel.getText();
             String pwd = new String(passwordFiel.getPassword());
 
-            if (username.equals("") && pwd.equals("")) {
+            if (username.equals("202307378") && pwd.equals("proyecto1IPC1")) {
                 Administrador vtn_admin = new Administrador();
                 this.dispose();
-            } else {
-                JOptionPane.showMessageDialog(this, "User and/or password incorrect.", "Error con el LOGIN", 0);
             }
 
         } else if (Ae.getActionCommand().equals("Registrarse")) {
-            RegisterLogin vtn_registropa = new RegisterLogin();
-            //Patient_Module vtn_andmin = new Patient_Module();
+            LoginRegister vtn_registropa = new LoginRegister();
 
             this.dispose();
 
         }
     }
 
-
-
 }
-
-
-

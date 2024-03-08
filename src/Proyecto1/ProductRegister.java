@@ -14,7 +14,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class RegisterProduct extends JFrame implements ActionListener {
+public class ProductRegister extends JFrame implements ActionListener {
     private JTextField firstNameField;
 
     private JTextField PriceField;
@@ -24,7 +24,7 @@ public class RegisterProduct extends JFrame implements ActionListener {
     private JTable table_doctores; // Declarar la variable table_doctores
 
 
-    public RegisterProduct() {
+    public ProductRegister() {
         JLabel titleLabel = new JLabel("Registro de Producto");
         titleLabel.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 20));
         titleLabel.setBounds(150, 10, 220, 30);

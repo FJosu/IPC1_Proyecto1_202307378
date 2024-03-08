@@ -2,7 +2,7 @@ package Proyecto1;
 
 /**
  *
- * @author coxla
+ * @author fjosu
  */
 import java.awt.*;
 import javax.swing.*;
@@ -221,7 +221,7 @@ public class Administrador extends JFrame implements ActionListener {
         String[] columnspaciente = { "Número", "Nombre", "Apellido", "Contraseña", "Edad", "Género" };
         
         // Crear una instancia de JTable con los datos y nombres de columna
-        JTable table_paciente = new JTable(DataPatient.convertirDatosPaciente_tabla(), columnspaciente);
+        JTable table_paciente = new JTable(PatientData.convertirDatosPaciente_tabla(), columnspaciente);
         table_paciente.setBackground(new Color(217, 234, 253));
 
         // Crear un JScrollPane para la tabla (permite desplazarse por la tabla si es
@@ -350,14 +350,14 @@ public class Administrador extends JFrame implements ActionListener {
             //                         (valor que va a tener en la grafica, especialidad, especialidad)
             datos_Especialidad.addValue(dato_mapa.getValue(), dato_mapa.getKey(), dato_mapa.getKey());
 
-            if (contadort == 3) {
+            if (contadort == 5) {
                 break;
             }
 
         }
         //Creando Grafica
         JFreeChart graficaEspecialidad = ChartFactory.createBarChart(
-                "Top 3 de Especialidades", //Titulo grafica
+                "Top 5 de Especialidades", //Titulo grafica
                 "Especialidad", //Titulo eje X
                 "Cantidad", //Titulo eje Y
                 datos_Especialidad //datos utilizado para construir el gráfico
@@ -455,56 +455,68 @@ public class Administrador extends JFrame implements ActionListener {
             Login vtn_login = new Login();
         } else if (e.getSource() == btnRegistro) {
             this.dispose();
-            RegisterDoctors vtn_registro = new RegisterDoctors();
+            DoctorRegister vtn_registro = new DoctorRegister();
         } else if (e.getSource() == btnRegistro2) {
             this.dispose();
-            RegisterPatient vtn_registropa = new RegisterPatient();
+            PatientRegister vtn_registropa = new PatientRegister();
 
         } else if (e.getSource() == btn_salir2) {
             this.dispose();
             Login vtn_login = new Login();
         } else if (e.getSource() == btnRegistro3) {
             this.dispose();
-            RegisterProduct vtn_registropa = new RegisterProduct();
+            ProductRegister vtn_registropa = new ProductRegister();
 
         } else if (e.getSource() == btn_salir3) {
             this.dispose();
             Login vtn_login = new Login();
         }else if(e.getSource() == btnEliminar1) {
-<<<<<<< HEAD
+
             this.dispose();
             
-                DeleteDoctors delete= new DeleteDoctors();
+                DoctorDelete delete= new DoctorDelete();
         }else if(e.getSource() == btnEliminar2) {
             this.dispose();
             
-                DeletePatient deletep= new DeletePatient();
+                PatienteDelete deletep= new PatienteDelete();
         }else if(e.getSource() == btnEliminar3) {
             this.dispose();
             
-                DeleteProduct delete= new DeleteProduct();
+                ProductDelete delete= new ProductDelete();
         }else if(e.getSource() == btnActualizar1){
             DoctorEdit edit=new DoctorEdit();
             this.dispose();
-=======
+
             this.dispose();
             
-                DeleteDoctors delete= new DeleteDoctors();
+                
         }else if(e.getSource() == btnEliminar2) {
             this.dispose();
             
-                DeletePatient deletep= new DeletePatient();
+                PatienteDelete deletep= new PatienteDelete();
         }else if(e.getSource() == btnEliminar3) {
             this.dispose();
             
-                DeleteProduct delete= new DeleteProduct();
->>>>>>> 9b8e9a1773219999f715ae6efeb5dbf739bbcfe4
-        }
+                ProductDelete delete= new ProductDelete();
+
+        }else if(e.getSource() == btnActualizar2){
+            PatientEditing edit=new PatientEditing();
+            this.dispose();
+
+            this.dispose();
+            
+                
+        }else if(e.getSource() == btnActualizar3){
+            ProductEdit edit=new ProductEdit();
+            this.dispose();
+
+            this.dispose();
           
           
              }
         
     }
+}
             
 
         

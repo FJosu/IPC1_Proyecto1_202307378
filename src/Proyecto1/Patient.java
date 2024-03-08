@@ -28,6 +28,13 @@ public class Patient {
      /**
      * @return the codigo
      */
+    public int getId() {
+        return codigo;
+    }
+
+    public Patient(int codigo) {
+        this.codigo = codigo;
+    }
     public int getCodigo() {
         return codigo;
     }
@@ -78,7 +85,7 @@ public class Patient {
     /**
      * @param contraseña the contraseña to set
      */
-    public void setContraseña(String Password) {
+    public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
     
@@ -93,7 +100,7 @@ public class Patient {
     /**
      * @param edad the edad to set
      */
-    public void setEdad(String Age) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 

@@ -24,7 +24,7 @@ public class Patient_Module extends JFrame implements ActionListener {
     public static Patient patient;
 
     public Patient_Module() {
-        
+
         JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 
         // Crear un objeto JTabbedPane para gestionar pestañas
@@ -80,8 +80,8 @@ public class Patient_Module extends JFrame implements ActionListener {
         specialty.setForeground(new Color(12, 58, 109));
         specialty.setVisible(true);
         pest1.add(specialty);
-        String[] specialty2 = {  "Cardiología", "Dermatología", "Gatroenterología", "Ginecología", "Neumología",
-                "Neurología","Oftamología", "Pediatría", "Psicología", "Traumatología"};
+        String[] specialty2 = { "Cardiología", "Dermatología", "Gatroenterología", "Ginecología", "Neumología",
+                "Neurología", "Oftamología", "Pediatría", "Psicología", "Traumatología" };
         specialtycombo = new JComboBox<>(specialty2);
         specialtycombo.setBounds(280, 200, 150, 30);
         specialtycombo.setBackground(new Color(202, 222, 246));
@@ -135,7 +135,10 @@ public class Patient_Module extends JFrame implements ActionListener {
         date.setVisible(true);
         pest1.add(date);
 
-        String[] dates2 = { "M", "F" };
+        String[] dates2 = { "10/03/2024", "11/03/2024", "13/03/2024", "14/03/2024", "15/03/2024", "16/03/2024",
+                "17/03/2024", "18/03/2024", "19/03/2024", "20/03/2024", "21/03/2024", "22/03/2024", "23/03/2024",
+                "24/03/2024", "25/03/2024", "26/03/2024", "27/03/2024", "28/03/2024", "29/03/2024", "30/03/2024",
+                "31/03/2024" };
         datecombo = new JComboBox<>(dates2);
         datecombo.setBounds(190, 380, 150, 30);
         datecombo.setBackground(new Color(202, 222, 246));
@@ -148,7 +151,7 @@ public class Patient_Module extends JFrame implements ActionListener {
         hours.setVisible(true);
         pest1.add(hours);
 
-        String[] hour2 = { "M", "F" };
+        String[] hour2 = { "" };
         hourcombo = new JComboBox<>(hour2);
         hourcombo.setBounds(420, 380, 150, 30);
         hourcombo.setBackground(new Color(202, 222, 246));
@@ -265,16 +268,38 @@ public class Patient_Module extends JFrame implements ActionListener {
 
             String selecthour = (String) hourcombo.getSelectedItem();
 
-            DateData.agregarDate(DoctorsData.contador, descripcion, selectspecialty, selectdoctor, selectdate,
+            DateData.agregarDate(DateData.contador, descripcion, selectspecialty, selectdoctor, selectdate,
                     selecthour);
             DateData.contador++;
 
             this.dispose();
 
-                Patient_Module patientModule = new Patient_Module();
+            Patient_Module patientModule = new Patient_Module();
 
+        }else if(e.getSource() == editprofile) {
+            PatientProfileEdit vtn_login = new PatientProfileEdit();
+            this.dispose();
         }
 
+        showdoctors.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Obtener la especialidad seleccionada por el usuario
+                String selectodoctr = (String) doctorcombo.getSelectedItem();
+
+                // Limpiar el ComboBox de doctores antes de agregar nuevas especialidades
+                hourcombo.removeAllItems();
+
+                // Iterar sobre la lista de doctores y agregar aquellos que coincidan con la
+                // especialidad seleccionada
+                for (Datetime datetime : TimeData.Timelist) {
+
+                        hourcombo.addItem(datetime.getHora()); // Ajusta esto según cómo quieras mostrar el nombre del
+                                                                 // doctor
+                    
+                }
+            }
+        });
         showdoctors.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

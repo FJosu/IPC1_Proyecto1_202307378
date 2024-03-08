@@ -6,7 +6,7 @@ package Proyecto1;
 
 /**
  *
- * @author coxla
+ * @author fjosu
  */
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +14,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class RegisterDoctors extends JFrame implements ActionListener {
+public class DoctorRegister extends JFrame implements ActionListener {
 
     private JTextField firstNameField;
     private JTextField lastNameField;
@@ -28,7 +28,7 @@ public class RegisterDoctors extends JFrame implements ActionListener {
 
     JButton registerButton;
 
-    public RegisterDoctors() {
+    public DoctorRegister() {
 
         JLabel titleLabel = new JLabel("Registro de Doctor");
         titleLabel.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 20));

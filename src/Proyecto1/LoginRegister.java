@@ -21,7 +21,7 @@ import java.awt.event.ActionEvent;
  *
  * @author fjosu
  */
-public class RegisterLogin extends JFrame implements ActionListener {
+public class LoginRegister extends JFrame implements ActionListener {
     private JTextField firstNameField;
     private JTextField lastNameField;
     private JTextField PasswordField;
@@ -29,7 +29,7 @@ public class RegisterLogin extends JFrame implements ActionListener {
     private JComboBox<String> genderComboBox;
     JButton registerButton;
 
-    public RegisterLogin() {
+    public LoginRegister() {
         JLabel titleLabel = new JLabel("Registro de Paciente");
         titleLabel.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 20));
         titleLabel.setBounds(150, 10, 200, 30);
@@ -128,10 +128,10 @@ public class RegisterLogin extends JFrame implements ActionListener {
 
             String selectedGender = (String) genderComboBox.getSelectedItem();
 
-            DataPatient.agregarPaciente(DataPatient.contador, firstName, lastName, password, age, selectedGender);
-            DataPatient.contador++;
+            PatientData.agregarPaciente(PatientData.contador, firstName, lastName, password, age, selectedGender);
+            PatientData.contador++;
             this.dispose();
-            String siguienteCodigo = DataPatient.obtenerSiguienteCodigo();
+            String siguienteCodigo = PatientData.obtenerSiguienteCodigo();
 
             JOptionPane.showMessageDialog(this, "su código es: " + siguienteCodigo, "Su código", 1);
             this.dispose();

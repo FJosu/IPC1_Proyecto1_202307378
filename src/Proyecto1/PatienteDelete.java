@@ -14,13 +14,13 @@ package Proyecto1;
       import java.awt.event.ActionEvent;
       import java.awt.event.ActionListener;
 
-public class DeletePatient extends JFrame implements ActionListener {
+public class PatienteDelete extends JFrame implements ActionListener {
     
     
         private JTextField txtId;
         private JButton Delete; 
     
-        public DeletePatient() {
+        public PatienteDelete() {
             JLabel title = new JLabel("¿Qué paciente deseas eliminar?");
             title.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 14));
             title.setBounds(45, -5, 300, 100);
@@ -73,7 +73,7 @@ public class DeletePatient extends JFrame implements ActionListener {
                     // Conversión de edad de String a int
                     int idpatient = Integer.parseInt(ID);
                     // Si la conversión es exitosa, el sistema agrega el doctor
-                    DataPatient.DeleteDoctor(idpatient);
+                    PatientData.DeletePatient(idpatient);
                     JOptionPane.showMessageDialog(this, "Paciente eliminado con éxito!", "Confirmación", JOptionPane.PLAIN_MESSAGE);
                     this.dispose();
                     Administrador adminWindow = new Administrador();

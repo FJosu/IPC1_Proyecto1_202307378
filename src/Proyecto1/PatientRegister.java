@@ -14,7 +14,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class RegisterPatient extends JFrame implements ActionListener {
+public class PatientRegister extends JFrame implements ActionListener {
     private JTextField firstNameField;
     private JTextField lastNameField;
     private JTextField PasswordField;
@@ -25,7 +25,7 @@ public class RegisterPatient extends JFrame implements ActionListener {
 
     JButton registerButton;
 
-    public RegisterPatient() {
+    public PatientRegister() {
         JLabel titleLabel = new JLabel("Registro de Paciente");
         titleLabel.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 20));
         titleLabel.setBounds(150, 10, 200, 30);
@@ -124,8 +124,8 @@ public class RegisterPatient extends JFrame implements ActionListener {
 
             String selectedGender = (String) genderComboBox.getSelectedItem();
 
-            DataPatient.agregarPaciente(DataPatient.contador, firstName, lastName, password, age, selectedGender);
-            DataPatient.contador++;
+            PatientData.agregarPaciente(PatientData.contador, firstName, lastName, password, age, selectedGender);
+            PatientData.contador++;
 
             this.dispose();
             JOptionPane.showMessageDialog(this, "Paciente registrado exitosamente", "Confirmación de Registro", 1);

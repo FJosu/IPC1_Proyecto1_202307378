@@ -8,14 +8,13 @@ package Proyecto1;
  *
  * @author fjosu
  */
-
-//Librerias importadas
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
-public class DoctorEdit extends JFrame implements ActionListener {
+public class DoctorProfileEdit extends JFrame implements ActionListener {
 
     private JTextField Nametext;
     private JTextField Lastnametext;
@@ -27,7 +26,7 @@ public class DoctorEdit extends JFrame implements ActionListener {
     private JTextField agetext;
     private JButton btnConfirmEditDoctor, search;
 
-    public static void DoctorEdit(int codigo, String nombre, String apellido, String especialidad, String contraseña,
+    public static void DoctorProfileEdit(int codigo, String nombre, String apellido, String especialidad, String contraseña,
             String telefono, String edad, String genero) {
         DoctorsData.updateDoctor(new Doctors(codigo, nombre, apellido, especialidad, contraseña, telefono,
                 String.valueOf(edad), genero));
@@ -35,9 +34,9 @@ public class DoctorEdit extends JFrame implements ActionListener {
 
     Doctors doctor;
 
-    public DoctorEdit() {
+    public DoctorProfileEdit() {
 
-        JLabel title = new JLabel("¿Qué doctor deseas editar?");
+        JLabel title = new JLabel("Ingrese su código ");
         title.setFont(new Font("Kdam Thmor Pro", Font.BOLD, 14));
         title.setBounds(45, -5, 300, 100);
         title.setForeground(Color.BLACK);
@@ -192,7 +191,7 @@ public class DoctorEdit extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(this, "Doctor editado con éxito!", "Confirmación",
                         JOptionPane.PLAIN_MESSAGE);
                 this.dispose();
-                Administrador adminWindow = new Administrador();
+                Doctors_Module doctorsmodule = new Doctors_Module();
             } catch (NumberFormatException ex) {
                 // Si la conversión falla, muestra un mensaje de error
                 JOptionPane.showMessageDialog(this, "Por favor, ingrese un valor válido.", "Error",
