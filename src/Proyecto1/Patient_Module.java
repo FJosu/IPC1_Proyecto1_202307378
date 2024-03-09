@@ -276,16 +276,16 @@ public class Patient_Module extends JFrame implements ActionListener {
 
             Patient_Module patientModule = new Patient_Module();
 
-        }else if(e.getSource() == editprofile) {
+        } else if (e.getSource() == editprofile) {
             PatientProfileEdit vtn_login = new PatientProfileEdit();
             this.dispose();
         }
 
-        showdoctors.addActionListener(new ActionListener() {
+        showdates.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Obtener la especialidad seleccionada por el usuario
-                String selectodoctr = (String) doctorcombo.getSelectedItem();
+                String selecthour = (String) hourcombo.getSelectedItem();
 
                 // Limpiar el ComboBox de doctores antes de agregar nuevas especialidades
                 hourcombo.removeAllItems();
@@ -294,9 +294,9 @@ public class Patient_Module extends JFrame implements ActionListener {
                 // especialidad seleccionada
                 for (Datetime datetime : TimeData.Timelist) {
 
-                        hourcombo.addItem(datetime.getHora()); // Ajusta esto según cómo quieras mostrar el nombre del
-                                                                 // doctor
-                    
+                    hourcombo.addItem(datetime.getHora()); // Ajusta esto según cómo quieras mostrar el nombre del
+                                                           // doctor
+
                 }
             }
         });
